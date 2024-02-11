@@ -8,24 +8,28 @@ NOTE: This app is built with python3.9
 ```bash
 virtualenv -p python3.9 property-finder-env
 ```
-2. Make sure the pip has been upgraded
+2. Activate the env
+```bash
+source property-finder-env/bin/activate
+```
+3. Make sure the pip has been upgraded
 ```bash
 pip install --upgrade pip
 ```
-3. Install the project dependencies.
+4. Install the project dependencies.
 ```bash
 pip install -r requirements.txt --no-cache-dir
 ```
-4. Check the default creds provided in default database in DATABASES at `property_finder/databases.py`. Replace the given creds(default) with the local creds of your local mysql database. Please find more details here on how to setup mysql in mac: https://dev.mysql.com/doc/refman/5.7/en/macos-installation-pkg.html
-5. Check if the local server is up and running (run the below command at the root dir):
+5. Check the default creds provided in default database in DATABASES at `property_finder/databases.py`. Replace the given creds(default) with the local creds of your local mysql database. Please find more details here on how to setup mysql in mac: https://dev.mysql.com/doc/refman/5.7/en/macos-installation-pkg.html
+6. Check if the local server is up and running (run the below command at the root dir):
 ```bash
 python manage.py runserver
 ```
-6. If the local server is running, migrate the tables to the local database.
+7. If the local server is running, migrate the tables to the local database.
 ```
 python manage.py migrate
 ```
-7. Once the migrations are completed. The APIs are ready to use.
+8. Once the migrations are completed. The APIs are ready to use.
 
 POSTMAN COLLECTION:
 1. AUTH collection: https://www.postman.com/winter-spaceship-107557/workspace/property-finder/collection/18975387-6184291d-47a0-4621-aaac-0a43da046e71?action=share&creator=18975387&active-environment=18975387-b9604394-f3ba-4645-a92e-e16f219d0301
