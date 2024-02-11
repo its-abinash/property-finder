@@ -1,8 +1,7 @@
 import traceback
-from common.custom_exceptions import TimeoutException, HttpException
+from common.custom_exceptions import HttpException
 from rest_framework.response import Response
 from rest_framework import status
-
 
 def return_success_response(response):
     response["is_success"] = True
@@ -24,10 +23,6 @@ def custom_http_exception_handler(request, exc):
     print("traceback: ", tb)
     headers = getattr(exc, "headers", None)
 
-    # Handle custom exceptions here.
-    if isinstance(exc, TimeoutException):
-        return return_failure_response(exc)
-    
     if isinstance(exc, HttpException): 
         return return_failure_response(exc, status_code=exc.status_code)
 
