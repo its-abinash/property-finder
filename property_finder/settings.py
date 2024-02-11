@@ -1,39 +1,22 @@
 import os
+from property_finder.middleware import *
+from property_finder.apps import *
+from property_finder.databases import *
+from property_finder.env import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'vl*7k22hul^-vk&eij)oq!h)2!@ete(+nrz$054!(0#kauec%9'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+ALLOWED_HOSTS = ["*"]
 
-ALLOWED_HOSTS = []
-
-INSTALLED_APPS = [
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-]
-
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-]
+DJANGO_MODEL_BACKEND = 'django.contrib.auth.backends.ModelBackend'
 
 ROOT_URLCONF = 'property_finder.urls'
 
 WSGI_APPLICATION = 'property_finder.wsgi.application'
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+AUTH_USER_MODEL = 'authentication.User'
 
 LANGUAGE_CODE = 'en-us'
 

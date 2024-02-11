@@ -1,10 +1,9 @@
 from django.conf.urls import include, url
-from .views import (LoginUserView, LogoutUserView, RegisterUserView,
-                    CurrentUserView)
+import authentication.views as auth_view
 
 urlpatterns = [
-    url(r'^login/', LogoutUserView.as_view()),
-    url(r'^register/', RegisterUserView.as_view()),
-    url(r'^logout/', LogoutUserView.as_view()),
-    url(r'^me/', CurrentUserView.as_view())
+    url(r'^login/', auth_view.LoginUserView.as_view()),
+    url(r'^register/', auth_view.RegisterUserView.as_view()),
+    url(r'^logout/', auth_view.LogoutUserView.as_view()),
+    url(r'^me/', auth_view.CurrentUserView.as_view())
 ]
