@@ -18,3 +18,8 @@ PROPERTY_LABEL_CHOICES = [
     ('bathroom', 'Bathroom'),
     ('others', 'Others')
 ]
+
+ALLOWED_PROPERTY_FILEDS_TO_UPDATE = [
+    "title", "description", "price", "bedrooms", "area", "property_type", "bathrooms",
+    "documents", "sold"
+]
