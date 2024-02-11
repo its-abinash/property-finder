@@ -54,4 +54,9 @@ Troubleshoot with mysqlclient for mac m1 chip:
 MYSQLCLIENT_CFLAGS="<YOUR_MYSQLCLIENT_CFLAGS_PATH>" MYSQLCLIENT_LDFLAGS="<YOUR_MYSQLCLIENT_LDFLAGS_PATH>" arch -x86_64 pip install -I  -vvv mysqlclient --no-cache-dir
 ```
 
+Troubleshoot with Auth Collection with error: "CSRF Failed: CSRF token missing or incorrect."
+```
+If the APIs throws error, even after registration and(or) login is completed, then please delete the cookies and try again.
+```
+
 Please Note: While using the POST/PUT listings API, if the images/files are being sent in the request. Please zip the folder that contains the files(say image files). And the name of those file should be one of the choices as mentioned here: listings/constants.py -> PROPERTY_LABEL_CHOICES
